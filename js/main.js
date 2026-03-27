@@ -90,39 +90,171 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ================================================
-       4. Scroll Reveal Animations (Intersection Observer)
+       4. Lenis Smooth Scroll Setup
        ================================================ */
-    const revealOptions = {
-        root: null,
-        rootMargin: '0px 0px -100px 0px',
-        threshold: 0.1
-    };
-
-    const revealCallback = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Optional: stop observing once revealed
-                // observer.unobserve(entry.target);
-            }
-        });
-    };
-
-    const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
-    
-    document.querySelectorAll('.reveal-element, .fade-up-element').forEach(el => {
-        revealObserver.observe(el);
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        smoothTouch: false,
+        touchMultiplier: 2,
     });
 
+    // Sync Lenis with GSAP ScrollTrigger
+    lenis.on('scroll', ScrollTrigger.update);
+
+    gsap.ticker.add((time)=>{
+        lenis.raf(time * 1000);
+    });
+    
+    gsap.ticker.lagSmoothing(0);
+
     /* ================================================
-       5. Initial Load Animation
+       5. GSAP Scroll Animations
        ================================================ */
-    // Trigger hero animations right away
-    setTimeout(() => {
-        document.querySelectorAll('.hero-content.fade-up-element, .hero-visual.fade-up-element').forEach(el => {
-            el.classList.add('visible');
+    // Register Plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Initial Load Animations (Hero)
+    const tlHero = gsap.timeline();
+    tlHero.from(".hero-subtitle", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out", delay: 0.2 })
+          .from(".hero-title", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.6")
+          .from(".hero-description", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.6")
+          .from(".hero-actions .btn", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out", stagger: 0.2 }, "-=0.6")
+          .from(".ambient-bg", { opacity: 0, duration: 2, ease: "power2.inOut" }, "-=1.5");
+
+    // Hero Parallax (moves slightly up slower than scroll)
+    gsap.to(".hero-content", {
+        y: 150,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+        }
+    });
+
+    // About Section Text Scrub Effect
+    gsap.from(".about-text", {
+        opacity: 0.2,
+        y: 20,
+        duration: 1,
+        stagger: 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: ".about-content",
+            start: "top 80%",
+            end: "top 40%",
+            scrub: 1
+        }
+    });
+
+    gsap.from(".skill-tag", {
+        opacity: 0,
+        scale: 0.8,
+        y: 20,
+        stagger: 0.05,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+            trigger: ".skills-list",
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+        }
+    });
+
+    // About Section Image Parallax
+    gsap.fromTo(".about-slider-wrapper", 
+        { y: 50 },
+        {
+            y: -50,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".about-visuals",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
+        }
+    );
+
+    // Projects Section Reveal & Parallax
+    gsap.from(".section-header", {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: ".projects",
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+        }
+    });
+
+    const projectCards = gsap.utils.toArray('.project-card');
+    projectCards.forEach((card, i) => {
+        gsap.from(card, {
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            ease: "expo.out",
+            scrollTrigger: {
+                trigger: card,
+                start: "top 85%",
+                toggleActions: "play none none reverse"
+            }
         });
-    }, 100);
+
+        // Image parallax inside card
+        const img = card.querySelector('.project-image');
+        if(img) {
+            gsap.fromTo(img, 
+                { scale: 1.1, y: -20 },
+                { 
+                    scale: 1, 
+                    y: 20,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                }
+            );
+        }
+    });
+
+    // Experience Timeline
+    const timelineItems = gsap.utils.toArray('.timeline-item');
+    timelineItems.forEach((item, i) => {
+        gsap.from(item, {
+            x: -50,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: item,
+                start: "top 85%",
+                toggleActions: "play none none reverse"
+            }
+        });
+    });
+
+    // Footer Reveal
+    gsap.from(".footer-cta", {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".footer-section",
+            start: "top 90%",
+            toggleActions: "play none none reverse"
+        }
+    });
 
     /* ================================================
        6. Dynamic Year in Footer
