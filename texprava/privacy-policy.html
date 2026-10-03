@@ -1,48 +1,87 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Texprava – Privacy policy</title>
-<style>
-  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.6; color: #2a251f; background: #fbf8f1; }
-  h1 { font-family: Georgia, serif; margin-bottom: 0; }
-  .tag { color: #8c5e14; margin-top: 4px; }
-  h2 { margin-top: 32px; font-size: 1.15rem; }
-  .muted { color: #6f6656; font-size: .9rem; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf8f1">
+  <meta name="description" content="Privacy policy for Texprava, an Android document, note and handwriting editor developed by Jomy P Jose. Learn about local storage, speech services and deleting your data.">
+  <title>Texprava – Privacy policy</title>
+  <link rel="canonical" href="https://jomypjose.github.io/texprava/privacy-policy.html">
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.7; color: #2a251f; background: #fbf8f1; }
+    h1 { font-family: Georgia, serif; font-size: clamp(2rem, 7vw, 2.8rem); line-height: 1.2; margin: 24px 0 12px; }
+    .app-name { font-family: Georgia, serif; font-size: 1.4rem; font-weight: bold; margin: 0; }
+    .tag { color: #8c5e14; margin-top: 4px; }
+    h2 { margin-top: 32px; font-size: 1.15rem; line-height: 1.4; }
+    .muted { color: #6f6656; font-size: .9rem; }
+    a { color: #78500d; text-underline-offset: 3px; overflow-wrap: anywhere; }
+    a:focus-visible { outline: 2px solid #8c5e14; outline-offset: 4px; }
+    li { margin-bottom: 10px; }
+    footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd3c0; font-size: .9rem; }
+  </style>
 </head>
 <body>
-<h1>Texprava</h1>
-<p class="tag">More than an editor</p>
-<h1 style="font-size:1.6rem;margin-top:24px">Privacy policy</h1>
-<p class="muted">Effective date: 4 October 2026</p>
+  <header>
+    <p class="app-name">Texprava</p>
+    <p class="tag">More than an editor</p>
+  </header>
+  <main>
+    <h1>Privacy policy</h1>
+    <p class="muted">Effective date: <time datetime="2026-10-04">4 October 2026</time><br>Last updated: <time datetime="2026-10-04">4 October 2026</time></p>
+    <p>Texprava is a document, note and handwriting editor for Android, developed by Jomy P Jose. This policy explains how information is handled when you use the app.</p>
+    <p><strong>Texprava has no developer-operated servers, accounts, advertising, analytics or tracking.</strong> Document contents and app settings are stored on your device or in file locations you choose. Optional speech features and user-selected cloud storage or sharing apps may process information through their own services, as explained below. The developer does not sell your personal data.</p>
 
-<p>Texprava is a document, note and handwriting editor for Android. This policy explains what happens to your information when you use it. In short: <strong>Texprava does not collect, store on any server, sell or share your personal data.</strong></p>
+    <h2>No account or direct internet access</h2>
+    <p>Texprava does not ask you to sign in and does not request Android’s internet permission. It contains no advertising, analytics or third-party tracking SDKs. This does not prevent another app or service you choose, such as a speech service or cloud file provider, from accessing the internet using its own permissions.</p>
 
-<h2>No account, no internet access</h2>
-<p>Texprava does not ask you to sign in and does not have permission to access the internet. It contains no advertising, analytics or tracking code.</p>
+    <h2>Your documents and local information</h2>
+    <p>Texprava accesses the text, notes, handwriting, pictures and document files you create or choose to open so that you can edit, save, export, share or read them aloud. It stores drafts, version history, undo history, recent-file references and editor preferences in app-private storage on your device. Saved documents are stored in the files and locations you choose through Android’s file picker.</p>
+    <p>The developer does not receive these documents or settings. If you choose a cloud folder in the file picker, that storage provider may upload and retain the selected files under its own privacy policy. If you share or export a document to another app, that app receives the content you select and handles it under its own policy.</p>
 
-<h2>Your documents</h2>
-<p>Documents, drafts, version history and undo history are stored only on your device, in the app's private storage, or in the files and locations you choose when you open or save a document (for example your phone's storage or a cloud folder you pick in Android's file picker). Texprava does not send your documents anywhere. Files you share are sent only to the app you choose.</p>
-<p>Locked notes are encrypted on your device with a key kept in the Android Keystore and are opened with your phone's screen lock. Texprava never sees your fingerprint, face data, PIN or password; Android checks them.</p>
+    <h2>Permissions and your choices</h2>
+    <ul>
+      <li><strong>Microphone:</strong> Texprava requests microphone permission for dictation. You can decline or revoke it in Android’s app-permission settings and continue using editing features that do not require dictation.</li>
+      <li><strong>Biometric authentication and screen lock:</strong> Texprava uses Android’s authentication prompt to open locked notes. Android checks your fingerprint, face or device credentials; Texprava receives the authentication result, not your biometric data, PIN, pattern or password.</li>
+      <li><strong>Files:</strong> Android’s file picker grants access to the documents or locations you select. Texprava does not request broad access to all files on your device.</li>
+    </ul>
 
-<h2>Microphone and dictation</h2>
-<p>The microphone permission is used only while you dictate. Speech recognition is performed by the speech service installed on your phone (for example Google's speech services). Texprava asks that service to recognise speech on the device when an offline language pack is available; otherwise the service may process your audio online under its own privacy policy. Texprava itself does not record, store or transmit audio.</p>
+    <h2>Microphone and dictation</h2>
+    <p>The microphone is used while dictation is active. Speech recognition is performed by the speech service installed on your phone, which receives audio to return recognized text. Texprava requests offline recognition initially, but that request may not be honored by every service. The service may process audio online, including when offline recognition is unavailable, under its own privacy policy.</p>
+    <p>Texprava does not itself save audio recordings or send audio to developer-operated servers. Recognized text is inserted into your document and may be retained in local drafts and document history like other text you enter. You can stop dictation using the app’s controls or revoke microphone permission in Android settings.</p>
 
-<h2>Read aloud</h2>
-<p>Read aloud uses your phone's text-to-speech engine. Text is passed to that engine on your device; some voices offered by the engine may work online under the engine's own policy.</p>
+    <h2>Read aloud</h2>
+    <p>Read aloud passes the text being read to your phone’s text-to-speech engine. Depending on the engine and voice, processing may occur on your device or through the engine provider’s online services. Those services handle the text under their own privacy policies. You can stop reading or avoid this feature if you do not want text passed to the engine.</p>
+    <p>If you use Google’s speech or text-to-speech services, their handling of information is described in <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>. Other installed providers have their own policies; check your device’s speech and text-to-speech settings to identify the providers you use.</p>
 
-<h2>Backups</h2>
-<p>Texprava turns off Android's automatic cloud backup of its private data. Your documents are backed up only if you save them to a location that you back up yourself.</p>
+    <h2>Security and locked notes</h2>
+    <p>App-private data is protected by Android’s app-storage access controls. Locked-note contents and their retained versions are encrypted on your device using AES-GCM with a key stored in the Android Keystore. Opening a locked note requires your phone’s screen-lock authentication.</p>
+    <p><strong>The note lock does not encrypt files you save or export outside Texprava’s private storage.</strong> Ordinary documents are not encrypted by the note-lock feature. Shared or exported copies, and copies already held by another app or storage provider, are subject to that destination’s protections. Clearing app storage or uninstalling the app removes app-private data and may make any remaining encrypted copies inaccessible.</p>
 
-<h2>Children</h2>
-<p>Texprava is a general-purpose productivity app and is not directed at children. It collects no personal information from anyone.</p>
+    <h2>Data retention and deletion</h2>
+    <p>Texprava retains local drafts, app settings and document history to support editing and recovery between sessions. Version history is bounded by storage and version-count limits, so older versions may be removed automatically. Temporary shared files may be replaced or removed as new files are shared or Android clears cached data.</p>
+    <ul>
+      <li><strong>Delete all app-private data:</strong> In Android settings, open Apps → Texprava → Storage (or Storage &amp; cache) → Clear storage / Clear data, or uninstall Texprava. Settings names vary by device. This removes local drafts, history and settings; clearing only the cache does not remove all app-private data. Save any documents you want to keep before clearing storage or uninstalling.</li>
+      <li><strong>Delete saved or exported files:</strong> Remove them from the file manager or storage provider where you saved them. Clearing Texprava’s storage or uninstalling it does not delete files saved outside its private storage.</li>
+      <li><strong>Delete copies held by other services:</strong> Use the relevant cloud provider, sharing app or speech provider’s controls and policies. Texprava cannot delete copies those services retain.</li>
+    </ul>
+    <p>There is no Texprava account or developer-held document database to delete. Because the developer has no access to your local files, deletion of app-private document data is performed on your device using the steps above.</p>
 
-<h2>Changes</h2>
-<p>If a future version adds a feature that handles data differently (for example optional cloud sync), this policy will be updated before that version is released, and the change will be described here.</p>
+    <h2>Backups</h2>
+    <p>Texprava disables Android’s automatic cloud backup of its private data and configures its private data to be excluded from Android’s device-transfer backup. Documents you save to an external or cloud location may still be backed up by you or by that storage provider. Those copies are governed by your chosen backup settings and the provider’s policy.</p>
 
-<h2>Contact</h2>
-<p>Questions about this policy: <a href="mailto:jomypjosevyssery@gmail.com">jomypjosevyssery@gmail.com</a></p>
+    <h2>Children</h2>
+    <p>Texprava is a general-purpose productivity app and is not directed at children. The developer does not collect personal information from users through the app. Optional third-party services described above operate under their own policies.</p>
+
+    <h2>Privacy inquiries</h2>
+    <p>If you email the developer, your email address and any information you include in your message are received for the purpose of answering your inquiry. Please do not send private documents unless needed for your request. Correspondence may be retained as needed to respond and follow up; you can request deletion of that correspondence using the contact address below.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>This policy will be updated if Texprava’s data practices change. The updated policy will be published here with a revised date. If a future version introduces features such as optional cloud sync, the policy will be updated before that version is released, with any required disclosures or permission requests provided in the app.</p>
+
+    <h2>Contact</h2>
+    <p>Developer and privacy contact: <strong>Jomy P Jose</strong><br>Email: <a href="mailto:jomypjosevyssery@gmail.com">jomypjosevyssery@gmail.com</a></p>
+  </main>
+  <footer><a href="../index.html">Back to Jomy P Jose’s website</a></footer>
 </body>
 </html>
