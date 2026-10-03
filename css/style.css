@@ -2546,3 +2546,23 @@ h2 {
   flex-wrap: wrap;
   align-items: center;
 }
+
+/* Texprava: native Android work, with real app screenshots. */
+.texprava-project { margin-top: 28px; }
+.texprava-stage { padding: 28px 32px 24px; background: #e9e1d2; }
+.texprava-stage-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+.texprava-stage-heading img { border-radius: 10px; }
+.texprava-stage-heading strong { display: block; font: 600 22px var(--display); letter-spacing: -.04em; }
+.texprava-stage-heading span { display: block; margin-top: 3px; font: 7px var(--mono); letter-spacing: .1em; color: #6d604e; }
+.texprava-screens { display: flex; align-items: center; justify-content: center; gap: 22px; padding: 0 8px; }
+.texprava-screens img { width: min(42%, 205px); height: auto; border: 5px solid #242522; border-radius: 20px; box-shadow: 0 15px 24px #433c2520; }
+.texprava-screens img:first-child { transform: rotate(-3deg); }
+.texprava-screens img:last-child { transform: rotate(3deg); }
+.texprava-stage-caption { display: block; margin-top: 29px; text-align: center; font: 8px var(--mono); letter-spacing: .12em; color: #6d604e; }
+.texprava-policy-link { margin-top: 20px; }
+@media (max-width: 600px) {
+  .texprava-stage { padding: 24px 20px; }
+  .texprava-screens { gap: 16px; padding: 0; }
+  .texprava-screens img { border-width: 4px; border-radius: 15px; }
+  .texprava-stage-caption { font-size: 7px; }
+}
