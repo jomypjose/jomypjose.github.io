@@ -1,5 +1,28 @@
 (() => {
   'use strict';
+  const themeToggle = document.querySelector('.theme-toggle');
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+  let savedTheme;
+  try { savedTheme = localStorage.getItem('portfolio-theme'); } catch {}
+  const applyTheme = dark => {
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    themeToggle?.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#151b18' : '#f5f4ef');
+  };
+  applyTheme(savedTheme === 'dark' || (savedTheme !== 'light' && systemTheme.matches));
+  if (themeToggle) {
+    themeToggle.hidden = false;
+    themeToggle.addEventListener('click', () => {
+      const dark = document.documentElement.dataset.theme !== 'dark';
+      savedTheme = dark ? 'dark' : 'light';
+      applyTheme(dark);
+      try { localStorage.setItem('portfolio-theme', savedTheme); } catch {}
+    });
+  }
+  systemTheme.addEventListener('change', event => {
+    if (savedTheme !== 'dark' && savedTheme !== 'light') applyTheme(event.matches);
+  });
+
   const menu = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('#navigation');
   const closeMenu = () => {

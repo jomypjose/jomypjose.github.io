@@ -2566,3 +2566,115 @@ h2 {
   .texprava-screens img { border-width: 4px; border-radius: 15px; }
   .texprava-stage-caption { font-size: 7px; }
 }
+
+/* Readable supporting content across desktop and mobile. */
+.section-heading > p, .project-description > p, .secondary-copy > p,
+.case-study-body p, .skill-group p, .skill-group ul,
+.experience-intro > p:not(.eyebrow), .experience-item > p:not(.company) {
+  font-size: 15px;
+  line-height: 1.65;
+}
+.project-kicker, .tags, .experience-meta, .skill-number, .eyebrow,
+.concept-label, .texprava-stage-heading span, .texprava-stage-caption,
+.photo-caption, .stage-number, .stage-footer, .stage-footer > span,
+.cloud-node small, .network-line span, .branch-nodes span,
+.network-core small, .site-footer > p, .copy-email {
+  font-size: 11px;
+}
+.footer-links { font-size: 12px; gap: 16px; }
+.featured-project + .featured-project { margin-top: 28px; }
+.texprava-project { margin-top: 0; }
+.project-description .project-release-note {
+  margin-top: 22px;
+  font: 11px/1.6 var(--mono);
+  color: var(--muted);
+}
+.texprava-policy-link { margin-top: 12px; }
+@media (max-width: 600px) {
+  .hero-visual { transform: none; }
+  .visual-topline, .visual-bottomline { padding: 10px 16px; font-size: 11px; }
+  .visual-bottomline, .architecture-label, .architecture-bottom,
+  .stack-connector, .layer-number, .stack-layer small, .layer-status,
+  .visual-orbit { display: none; }
+  .architecture { padding: 14px; display: grid; gap: 8px; }
+  .hero-visual .stack-layer { padding: 10px 12px; gap: 12px; }
+  .layer-icon { width: 28px; height: 28px; }
+  .stack-layer strong { font-size: 16px; }
+  .hero-footnote, .proof-inner p { font-size: 11px; }
+  .about-copy > p:not(.eyebrow) { font-size: 15px; }
+  .stage-footer { flex-wrap: wrap; }
+  .project-kicker { flex-wrap: wrap; line-height: 1.6; }
+  .photo-caption { flex-wrap: wrap; }
+  .app-table-labels, .app-breadcrumb { font-size: 9px; }
+  .app-metrics > div > span, .app-metrics small { font-size: 10px; }
+}
+
+/* Theme controls and charcoal surfaces retain the portfolio's warm accent. */
+:root { color-scheme: light; }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #151b18;
+  --ink: #edf0e8;
+  --muted: #b0b8ad;
+  --accent: #f08c6e;
+  --line: #39433b;
+  --white: #202923;
+}
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  margin-left: 24px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+}
+.theme-toggle[hidden] { display: none; }
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+.theme-sun { display: none; }
+[data-theme="dark"] .theme-moon { display: none; }
+[data-theme="dark"] .theme-sun { display: block; }
+.header-inner .navigation { margin-left: auto; }
+[data-theme="dark"] .site-header { background: #151b18f2; }
+[data-theme="dark"] .navigation { background-color: #151b18; }
+[data-theme="dark"] .muted { color: #b0b8ad; }
+[data-theme="dark"] .button-dark,
+[data-theme="dark"] .skip-link { background: #edf0e8; color: #151b18; }
+[data-theme="dark"] .button-dark:hover { background: #f08c6e; }
+[data-theme="dark"] .featured-project,
+[data-theme="dark"] .secondary-project { background: #202923; }
+[data-theme="dark"] .tags { color: #bdc6b8; }
+[data-theme="dark"] .about-section { background: #202923; }
+[data-theme="dark"] .hero-visual {
+  background-color: #202923;
+  background-image: radial-gradient(#445046 .7px, transparent .7px);
+  border-color: #39483d;
+}
+[data-theme="dark"] .visual-topline,
+[data-theme="dark"] .visual-bottomline { border-color: #39483d; }
+[data-theme="dark"] .stack-layer { background: #2a352d; border-color: #455347; }
+[data-theme="dark"] .layer-logic { background: #294639; }
+[data-theme="dark"] .layer-icon,
+[data-theme="dark"] .layer-status { border-color: #566957; color: #c6d6c4; }
+[data-theme="dark"] .stack-connector code,
+[data-theme="dark"] .architecture-bottom { color: #b0b8ad; }
+[data-theme="dark"] .texprava-stage { background: #302d24; }
+[data-theme="dark"] .texprava-stage-heading span,
+[data-theme="dark"] .texprava-stage-caption { color: #d1c2a8; }
+[data-theme="dark"] .cloud-stage { background-color: #253328; color: #d6e2ce; }
+[data-theme="dark"] .cloud-node,
+[data-theme="dark"] .branch-nodes span { background: #334537; border-color: #64795b; }
+[data-theme="dark"] .cloud-node small,
+[data-theme="dark"] .network-line span { color: #c3d2b9; background: #253328; }
+[data-theme="dark"] .network-stage,
+[data-theme="dark"] .network-core { background: #342d27; color: #e2c4ab; }
+[data-theme="dark"] .network-point { border-color: #342d27; }
+[data-theme="dark"] .contact-section { background: #0e1410; color: #edf0e8; }
+[data-theme="dark"] .button-light { background: #edf0e8; color: #151b18; }
+@media (max-width: 600px) {
+  .theme-toggle { margin-left: auto; margin-right: 14px; }
+  .header-inner .navigation { margin-left: 0; }
+}
