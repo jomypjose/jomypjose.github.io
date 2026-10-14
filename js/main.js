@@ -68,7 +68,7 @@
     });
   }
 
-  if ('IntersectionObserver' in window) {
+  if (navigation && 'IntersectionObserver' in window) {
     const sectionLinks = Array.from(navigation.querySelectorAll('a'));
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -81,5 +81,32 @@
       });
     }, { rootMargin: '-15% 0px -55% 0px', threshold: 0 });
     document.querySelectorAll('main > section[id]').forEach(section => observer.observe(section));
+  }
+  // Links still open the original images when dialog support or JavaScript is absent.
+  if (typeof HTMLDialogElement !== 'undefined') {
+    const previews = document.querySelectorAll('[data-screenshot]');
+    if (previews.length) {
+      const dialog = document.createElement('dialog');
+      dialog.className = 'screenshot-dialog';
+      dialog.setAttribute('aria-label', 'Screenshot preview');
+      dialog.innerHTML = '<form method="dialog"><button autofocus>Close preview ×</button></form><img alt=""><p></p>';
+      document.body.append(dialog);
+      const previewImage = dialog.querySelector('img');
+      const caption = dialog.querySelector('p');
+      previews.forEach(link => link.addEventListener('click', event => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        previewImage.src = link.href;
+        previewImage.alt = link.querySelector('img').alt;
+        caption.textContent = previewImage.alt;
+        dialog.showModal();
+      }));
+      dialog.addEventListener('click', event => {
+        if (event.target !== dialog) return;
+        const bounds = dialog.getBoundingClientRect();
+        if (event.clientX < bounds.left || event.clientX > bounds.right ||
+            event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+      });
+    }
   }
 })();

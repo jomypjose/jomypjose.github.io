@@ -2574,7 +2574,7 @@ h2 {
   font-size: 15px;
   line-height: 1.65;
 }
-.project-kicker, .tags, .experience-meta, .skill-number, .eyebrow,
+.project-kicker, .tags > span, .experience-meta, .skill-number, .eyebrow,
 .concept-label, .texprava-stage-heading span, .texprava-stage-caption,
 .photo-caption, .stage-number, .stage-footer, .stage-footer > span,
 .cloud-node small, .network-line span, .branch-nodes span,
@@ -2590,6 +2590,14 @@ h2 {
   color: var(--muted);
 }
 .texprava-policy-link { margin-top: 12px; }
+.project-release-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+  margin-top: 16px;
+}
+.project-release-actions .texprava-policy-link { margin-top: 0; }
 @media (max-width: 600px) {
   .hero-visual { transform: none; }
   .visual-topline, .visual-bottomline { padding: 10px 16px; font-size: 11px; }
@@ -2646,7 +2654,7 @@ h2 {
 [data-theme="dark"] .button-dark:hover { background: #f08c6e; }
 [data-theme="dark"] .featured-project,
 [data-theme="dark"] .secondary-project { background: #202923; }
-[data-theme="dark"] .tags { color: #bdc6b8; }
+[data-theme="dark"] .tags > span { color: #bdc6b8; }
 [data-theme="dark"] .about-section { background: #202923; }
 [data-theme="dark"] .hero-visual {
   background-color: #202923;
@@ -2677,4 +2685,65 @@ h2 {
 @media (max-width: 600px) {
   .theme-toggle { margin-left: auto; margin-right: 14px; }
   .header-inner .navigation { margin-left: 0; }
+}
+
+/* App case study and progressively enhanced screenshot previews. */
+.project-detail-link { margin-top: 24px; }
+.texprava-screens .screenshot-link { width: min(42%, 205px); flex-shrink: 0; }
+.texprava-screens .screenshot-link img { width: 100%; transform: none; }
+.texprava-screens .screenshot-link:first-child { transform: rotate(-3deg); }
+.texprava-screens .screenshot-link:last-child { transform: rotate(3deg); }
+.screenshot-link { display: block; cursor: zoom-in; border-radius: 20px; }
+.screenshot-link:hover { outline: 2px solid var(--accent); outline-offset: 5px; }
+.app-intro { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 64px; padding-block: 80px 100px; }
+.app-identity { display: flex; align-items: center; gap: 14px; margin-block: 28px; font: 600 24px var(--display); }
+.app-identity img { border-radius: 14px; }
+.app-intro h1 { font-size: clamp(52px, 6.5vw, 88px); }
+.app-lead { color: var(--muted); font-size: 17px; max-width: 48ch; margin-top: 26px; }
+.app-platform { font: 11px/1.8 var(--mono); color: var(--muted); margin-top: 20px; }
+.app-gallery { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 24px; padding: 32px; background: #e9e1d2; border-radius: 8px; }
+.app-gallery figure { margin: 0; min-width: 0; }
+.app-gallery figure:nth-child(2) { padding-top: 64px; }
+.app-gallery img { width: 100%; border: 5px solid #242522; border-radius: 20px; }
+.app-gallery figcaption { font: 11px/1.7 var(--mono); margin-top: 16px; color: #514c41; }
+.app-gallery > p { grid-column: 1 / -1; font-size: 12px; color: #514c41; }
+.app-section { border-top: 1px solid var(--line); padding-block: 80px; }
+.app-section h2, .app-closing h2 { font-size: clamp(32px, 4vw, 52px); margin-top: 20px; text-wrap: balance; }
+.app-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 48px; }
+.app-features h3 { margin-block: 20px 16px; font-size: 24px; }
+.app-features p, .engineering-notes p { font-size: 16px; color: var(--muted); line-height: 1.75; }
+.engineering-section { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+.engineering-notes article + article { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line); }
+.engineering-notes h3 { font-size: 23px; margin-bottom: 16px; }
+.engineering-notes .text-link { margin-top: 16px; }
+.app-closing { padding: 48px; margin-bottom: 70px; background: var(--white); border: 1px solid var(--line); }
+.app-closing .project-release-actions { margin-top: 28px; }
+.screenshot-dialog { max-width: min(94vw, 760px); max-height: 94dvh; padding: 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); color: var(--ink); overscroll-behavior: contain; }
+.screenshot-dialog::backdrop { background: #101710d9; }
+.screenshot-dialog form { display: flex; justify-content: flex-end; margin-bottom: 14px; position: sticky; top: 0; }
+.screenshot-dialog button { padding: 10px 18px; min-height: 44px; border-radius: 4px; background: var(--ink); color: var(--paper); }
+.screenshot-dialog button:hover { background: var(--accent); color: var(--paper); }
+.screenshot-dialog img { max-height: 73dvh; width: auto; margin-inline: auto; }
+.screenshot-dialog p { max-width: 50ch; margin-top: 16px; font-size: 14px; }
+html:has(.screenshot-dialog[open]) { overflow: hidden; }
+[data-theme="dark"] .app-gallery { background: #302d24; }
+[data-theme="dark"] .app-gallery figcaption, [data-theme="dark"] .app-gallery > p { color: #d1c2a8; }
+@media(max-width: 900px) {
+  .app-intro { gap: 32px; }
+  .app-gallery { padding: 20px; gap: 16px; }
+  .app-features { gap: 24px; }
+  .engineering-section { gap: 36px; }
+}
+@media(max-width: 600px) {
+  .app-navigation { display: flex; position: static; width: auto; padding: 0; border: 0; box-shadow: none; }
+  .app-navigation a { font-size: 12px; }
+  .app-page .eyebrow { line-height: 1.7; }
+  .app-intro { grid-template-columns: 1fr; padding-block: 44px 56px; }
+  .app-gallery { max-width: 440px; }
+  .app-features, .engineering-section { grid-template-columns: 1fr; }
+  .app-section { padding-block: 48px; }
+  .app-features { gap: 32px; margin-top: 32px; }
+  .app-closing { padding: 24px; margin-bottom: 40px; }
+  .app-lead { font-size: 16px; }
+  .screenshot-dialog { padding: 14px; }
 }

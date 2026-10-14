@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="Texprava brings documents, notes, handwriting and code into one Android workspace. Explore the app and the engineering behind it.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Texprava — Android document editor by Jomy P Jose">
+  <meta property="og:description" content="Documents, notes, handwriting and code in one Android workspace. Available on Google Play.">
+  <meta property="og:image" content="https://jomypjose.github.io/assets/images/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Texprava — Android document editor by Jomy P Jose. Web, Android and cloud applications.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Texprava — Android document editor by Jomy P Jose">
+  <meta name="twitter:description" content="Explore Texprava, an Android editor built by Jomy P Jose.">
+  <meta name="twitter:image" content="https://jomypjose.github.io/assets/images/social-preview.png">
+  <meta property="og:url" content="https://jomypjose.github.io/texprava/">
+  <link rel="canonical" href="https://jomypjose.github.io/texprava/">
+  <title>Texprava — Android document editor by Jomy P Jose</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=DM+Sans:wght@400;450;500;550;600;650;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    (() => {
+      let preference;
+      try { preference = localStorage.getItem('portfolio-theme'); } catch {}
+      const dark = preference === 'dark' || (preference !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    })();
+  </script>
+  <link rel="stylesheet" href="../css/style.css?v=20261015">
+  <script src="../js/main.js?v=20261015" defer></script>
+  <noscript><style>@media(max-width:600px){.header-inner{height:auto;flex-wrap:wrap;padding-block:16px;gap:16px}.navigation{display:flex;position:static;width:100%;padding:0;box-shadow:none;border:0}.menu-toggle{display:none}}</style></noscript>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="arrow-up-right" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+    <symbol id="arrow-right" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="arrow-down" viewBox="0 0 24 24"><path d="M12 4v16m-6-6 6 6 6-6"/></symbol>
+    <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="code" viewBox="0 0 24 24"><path d="m7 7-5 5 5 5m10-10 5 5-5 5m-4-13-2 20"/></symbol>
+    <symbol id="layers" viewBox="0 0 24 24"><path d="m12 3 10 6-10 6L2 9Zm-10 12 10 6 10-6M2 15l10 6 10-6"/></symbol>
+    <symbol id="download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V3H3v13h5"/></symbol>
+  </defs></svg>
+
+<header class="site-header"><div class="shell header-inner"><a class="brand" href="../index.html">Jomy P Jose<span class="accent">.</span></a><nav id="navigation" class="navigation app-navigation" aria-label="Main navigation"><a href="../index.html#work">Back to portfolio</a></nav>      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" hidden>
+        <svg class="icon theme-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></svg>
+        <svg class="icon theme-sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+      </button>
+</div></header>
+<main id="main" class="app-page shell">
+<section class="app-intro" aria-labelledby="app-title">
+<div><p class="eyebrow">INDEPENDENT PROJECT / ANDROID APPLICATION</p><div class="app-identity"><img src="icon.png" width="64" height="64" alt=""><span>Texprava</span></div><h1 id="app-title">Room for<br>every kind<br>of <span class="accent">thought.</span></h1><p class="app-lead">Documents, notes, handwriting and code. One Android workspace for writing with a keyboard, a stylus or your voice.</p><div class="project-release-actions"><a class="button button-dark" href="https://play.google.com/store/apps/details?id=com.jomypjose.texprava">Get it on Google Play ↗</a><a class="text-link" href="#engineering">How I built it ↓</a></div><p class="app-platform">Android 8.0+ · Built in Kotlin · No account required</p></div>
+<div class="app-gallery"><figure><a class="screenshot-link" href="../assets/images/texprava-editor.webp" data-screenshot><img src="../assets/images/texprava-editor.webp" width="480" height="960" alt="Document editor with formatted meeting notes and an embedded drawing"></a><figcaption>01 / Write & format</figcaption></figure><figure><a class="screenshot-link" href="../assets/images/texprava-handwriting.webp" data-screenshot><img src="../assets/images/texprava-handwriting.webp" width="480" height="960" alt="Handwriting canvas with a handwritten greeting and pen tools"></a><figcaption>02 / Sketch & explore</figcaption></figure><p>Select a screenshot to explore it in detail.</p></div>
+</section>
+<section class="app-section" aria-labelledby="features-title"><p class="eyebrow">THE WORKSPACE</p><h2 id="features-title">From a quick note<br>to a finished document.</h2><div class="app-features"><article><span class="eyebrow">01 / DOCUMENTS</span><h3>Keep the structure.</h3><p>Edit Word (.docx), OpenDocument, RTF and HTML files with formatting, tables, pictures and checklists. Use templates and export to PDF.</p></article><article><span class="eyebrow">02 / INPUT</span><h3>Find your own flow.</h3><p>Type, sketch with a stylus or your finger, or dictate in multiple languages. Read documents aloud using your phone’s speech services.</p></article><article><span class="eyebrow">03 / EVERYDAY TOOLS</span><h3>Stay with the idea.</h3><p>Work across multiple tabs, use syntax highlighting for code, and find what you need with regular-expression search.</p></article></div></section>
+<section id="engineering" class="app-section engineering-section" aria-labelledby="engineering-title"><div><p class="eyebrow">BEHIND THE APP</p><h2 id="engineering-title">Protect the work.<br>Then get out<br>of the way.</h2><p class="app-lead">I built Texprava in Kotlin, with document handling and recovery designed around the files people trust it with.</p></div><div class="engineering-notes"><article><h3>Keep format logic testable</h3><p>Format readers and writers use plain Kotlin so document conversions can be tested on the JVM. The project includes unit tests for format round trips, text encoding, editor behaviour and version history.</p></article><article><h3>Protect the original</h3><p>When a document contains unsupported content, the editor warns the user and asks for a new filename instead of overwriting the original. Before saving, it checks for changes made by another app.</p></article><article><h3>Recover between sessions</h3><p>Atomic local drafts, persistent undo and version history help protect work across app restarts. Android’s file picker gives users control over where files are opened and saved.</p></article><article><h3>Keep privacy explicit</h3><p>Locked-note contents are encrypted on the device. No account, ads or tracking; optional speech services and user-selected cloud storage operate under their own policies.</p><a class="text-link" href="privacy-policy.html">Read the privacy policy ↗</a></article></div></section>
+<section class="app-closing" aria-labelledby="try-title"><p class="eyebrow">AVAILABLE ON GOOGLE PLAY</p><h2 id="try-title">Make room for your next idea.</h2><div class="project-release-actions"><a class="button button-dark" href="https://play.google.com/store/apps/details?id=com.jomypjose.texprava">Get Texprava ↗</a><a class="text-link" href="mailto:jomypjosevyssery@gmail.com?subject=Texprava%20feedback">Send feedback ↗</a></div></section>
+</main><footer class="site-footer shell"><a class="footer-brand" href="../index.html">Jomy P Jose<span class="accent">.</span></a><p>© <span id="year">2026</span></p><div class="footer-links"><a href="../index.html#work">More projects</a><a href="privacy-policy.html">Privacy policy</a></div></footer>
+</body></html>
