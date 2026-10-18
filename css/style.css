@@ -2750,3 +2750,11 @@ html:has(.screenshot-dialog[open]) { overflow: hidden; }
   .app-lead { font-size: 16px; }
   .screenshot-dialog { padding: 14px; }
 }
+
+/* Full app screenshot collection, using the supplied phone captures. */
+.app-screenshot-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 24px; margin-top: 48px; }
+.app-screenshot-grid figure { margin: 0; min-width: 0; }
+.app-screenshot-grid img { display: block; width: 100%; height: auto; border: 4px solid #242522; border-radius: 18px; }
+.app-screenshot-grid figcaption { margin-top: 16px; font: 11px/1.8 var(--mono); color: var(--muted); }
+@media (max-width: 900px) { .app-screenshot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .app-screenshot-grid { gap: 28px 16px; } .app-screenshot-grid img { border-width: 3px; border-radius: 12px; } }
