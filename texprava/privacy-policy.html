@@ -46,8 +46,17 @@
     <p>Documents, drafts, version history and undo history are stored only on your device, in the app's private storage, or in the files and locations you choose when you open or save a document (for example your phone's storage or a cloud folder you pick in Android's file picker). Texprava does not send your documents anywhere. Files you share are sent only to the app you choose.</p>
     <p>Locked notes are encrypted on your device with a key kept in the Android Keystore and are opened with your phone's screen lock. Texprava never sees your fingerprint, face data, PIN or password; Android checks them.</p>
 
+    <p>Projects, tags, bookmarks, folded outline sections and your personal dictionary are kept in the app's private settings on your device. A bookmark in a locked document keeps only its position, not any of its text.</p>
+
+    <h2>Searching your saved files</h2>
+    <p>Search saved files reads only the folders you choose in Android's folder picker, which gives Texprava access to that folder alone. The text of supported files in it is stored in an index in the app's private storage, encrypted with a key kept in the Android Keystore. Locked documents are left out. You can update or remove each folder; removing a folder, or the whole index, deletes its search text and gives back Texprava's access to the folder. If you turn on reading scanned PDFs, their pages are read on your device by the same OCR engine as Scan text; nothing is sent anywhere.</p>
+
+    <h2>Spell checking</h2>
+    <p>Spell checking is off until you turn it on for a language. When you run Check spelling, the words being checked are passed to your phone's own spell checker, which is part of your keyboard app (for example Samsung Keyboard or Gboard), on your device. Texprava itself has no internet access; how that app handles the words is up to it, under its own privacy policy. Nothing in your document is changed unless you choose a suggestion.</p>
+
     <h2>Microphone and dictation</h2>
     <p>The microphone permission is used only while you dictate. Speech recognition is performed by the speech service installed on your phone (for example Google's speech services). Texprava asks that service to recognise speech on the device when an offline language pack is available; otherwise the service may process your audio online under its own privacy policy. Texprava itself does not record, store or transmit audio.</p>
+    <p>The dictation transcript (what was heard in this session and what was done with it) is kept in memory only, never saved, and is cleared when Texprava closes. Voice commands are recognised by Texprava from the text the speech service returns.</p>
     <p>If you download a Texprava speech pack, dictation in that language is recognised by Texprava itself, on your device. Sound from the microphone is held in memory only until each phrase has been recognised; it is never saved or sent anywhere.</p>
 
     <h2>Read aloud</h2>
@@ -63,7 +72,8 @@
     <p>Speech packs and the font pack are optional downloads delivered by Google Play, as parts of the app, under Google Play's own terms; Texprava still has no internet access of its own. Fonts you add from your phone's storage are copied into the app's private storage and used only to show, print and save your documents and PDFs. A font may be embedded in a PDF you save, as PDFs normally carry their fonts.</p>
 
     <h2>Backups</h2>
-    <p>Texprava turns off Android's automatic cloud backup of its private data. Your documents are backed up only if you save them to a location that you back up yourself.</p>
+    <p>Texprava turns off Android's automatic cloud backup of its private data. Your documents are backed up only if you save them to a location that you back up yourself, or if you make a Texprava backup.</p>
+    <p>A Texprava backup (Settings → Backup and restore) is made only when you ask for one. It contains your drafts, undo and version history, Word originals and app settings, encrypted with a password you choose (AES-256-GCM, with the key derived from your password), and it is saved only where you choose in Android's file picker. Texprava cannot recover a forgotten password. Locked notes stay encrypted with your device's key inside the backup and can be restored only on the device that locked them.</p>
 
     <h2>Children</h2>
     <p>Texprava is a general-purpose productivity app and is not directed at children. It collects no personal information from anyone.</p>
